@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Súarez | Economista & Analista BI | Consultor de Datos para MYPEs</title>
+    <meta name="description" content="Especialista en Business Intelligence y análisis de datos enfocado en MYPEs. Transformo datos en decisiones estratégicas mediante SQL, Excel y Power BI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* Variables profesionales - Azul corporativo */
+        :root {
+            --navy-dark: #0B1D3E;
+            --navy-medium: #1A365D;
+            --blue-primary: #2C5282;
+            --blue-accent: #3182CE;
+            --cyan-bright: #00B4D8;
+            --orange-warm: #F97316;
+            --slate-50: #F8FAFC;
+            --slate-100: #F1F5F9;
+            --slate-700: #334155;
+            --slate-900: #0F172A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--slate-900);
+            background: white;
+            overflow-x: hidden;
+        }
+
+        /* Navegación ejecutiva */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--navy-dark);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--slate-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange-warm);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--navy-dark);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero ejecutivo con geometría */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 2rem 100px;
+            background: linear-gradient(165deg, var(--navy-dark) 0%, var(--navy-medium) 50%, var(--blue-primary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, transparent 70%);
+            transform: rotate(-15deg);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero-text .highlight {
+            color: var(--cyan-bright);
+            display: block;
+            font-size: 3.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.35rem;
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 3rem;
+            max-width: 580px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 16px 36px;
+            background: var(--orange-warm);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+            background: #EA580C;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 16px 36px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .stats-box {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .stat-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--cyan-bright);
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* Secciones */
+        section {
+            padding: 120px 2rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 5rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--blue-accent);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.25rem;
+            font-weight: 400;
+            color: var(--navy-dark);
+            margin-bottom: 1.75rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--slate-700);
+            max-width: 720px;
+            line-height: 1.8;
+        }
+
+        /* Sobre Mí - diseño editorial */
+        .about {
+            background: var(--slate-50);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image-container {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 420px;
+            height: 520px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid var(--orange-warm);
+            border-radius: 12px;
+            transform: translate(20px, 20px);
+            z-index: -1;
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            color: var(--slate-700);
+            margin-bottom: 1.75rem;
+            line-height: 1.85;
+        }
+
+        .about-text strong {
+            color: var(--navy-dark);
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            color: var(--blue-accent);
+            font-weight: 600;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .tag {
+            padding: 0.75rem 1.25rem;
+            background: white;
+            color: var(--navy-dark);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        /* Herramientas - grid premium */
+        .tools {
+            background: white;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .tool-card {
+            background: var(--slate-50);
+            padding: 3.5rem 2.5rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-accent), var(--cyan-bright));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+            background: white;
+        }
+
+        .tool-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--navy-medium), var(--blue-accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 8px 24px rgba(44, 82, 130, 0.25);
+        }
+
+        .tool-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+
+        .tool-card p {
+            color: var(--slate-700);
+            line-height: 1.75;
+            font-size: 1.05rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .skill-level {
+            text-align: left;
+        }
+
+        .skill-level-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .skill-bar {
+            background: rgba(44, 82, 130, 0.1);
+            height: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue-accent), var(--cyan-bright));
+            border-radius: 8px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Servicios - layout asimétrico */
+        .services {
+            background: var(--slate-50);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--orange-warm);
+        }
+
+        .service-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+
+        .service-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: rgba(11, 29, 62, 0.08);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--slate-700);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .service-features li {
+            color: var(--slate-700);
+            margin-bottom: 0.875rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.975rem;
+            line-height: 1.6;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--orange-warm);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Casos de estudio - cards premium */
+        .case-studies {
+            background: white;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .case-card {
+            background: var(--slate-50);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .case-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .case-header {
+            height: 240px;
+            background: linear-gradient(135deg, var(--navy-dark), var(--blue-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%);
+        }
+
+        .case-content {
+            padding: 2.5rem;
+            background: white;
+        }
+
+        .case-tag {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: var(--orange-warm);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-content h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+        }
+
+        .case-content p {
+            color: var(--slate-700);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .case-results {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--orange-warm);
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+
+        /* Contacto - CTA dramático */
+        .contact {
+            background: linear-gradient(165deg, var(--navy-dark) 0%, var(--blue-primary) 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%);
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1.75rem;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .contact > p {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            margin-bottom: 3.5rem;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem 3.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            min-width: 200px;
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--orange-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+        }
+
+        .contact-card strong {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .contact-card span {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--slate-900);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 3.5rem 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.75rem;
+            font-size: 0.975rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--cyan-bright);
+            margin: 2rem auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            background: var(--orange-warm);
+            transform: translateY(-4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-text .highlight {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid,
+            .services-grid,
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 2rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2.75rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .highlight {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .contact h2 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Diego Súarez</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#casos">Casos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Diego Súarez
+                    <span class="highlight">Economista & Analista BI</span>
+                </h1>
+                <p class="subtitle">Especialista en Alta Gerencia & Mercadotecnia</p>
+                <p>Transformo datos complejos en decisiones estratégicas que impulsan el crecimiento de MYPEs. Experto en analítica de datos con enfoque en resultados medibles.</p>
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn-primary">
+                        💼 Trabajemos Juntos
+                    </a>
+                    <a href="#casos" class="btn-secondary">
+                        📊 Ver Casos de Éxito
+                    </a>
+                </div>
+            </div>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Precisión en Análisis</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">MYPEs Asesoradas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3x</span>
+                    <span class="stat-label">ROI Promedio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Acerca de Mí</span>
+                <h2 class="section-title">Analítica de Datos al Servicio de MYPEs</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&h=600&fit=crop" alt="Diego Súarez - Analista BI">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Soy <strong>Diego Súarez</strong>, Economista especializado en Business Intelligence con enfoque estratégico en Alta Gerencia y Mercadotecnia.</p>
+                    
+                    <p>Mi pasión es ayudar a <span class="highlight-text">Micro, Pequeñas y Medianas Empresas (MYPEs)</span> a tomar decisiones basadas en datos que generen impacto real en su crecimiento y rentabilidad.</p>
+                    
+                    <p>A través de la <strong>analítica de datos</strong>, diseño soluciones personalizadas que convierten información compleja en insights accionables, permitiendo a los líderes empresariales optimizar recursos, identificar oportunidades y maximizar resultados.</p>
+                    
+                    <p>Combino rigor analítico con visión estratégica para entregar dashboards, reportes y análisis que verdaderamente transforman negocios.</p>
+                    
+                    <div class="expertise-grid">
+                        <span class="tag">Business Intelligence</span>
+                        <span class="tag">Análisis de Datos</span>
+                        <span class="tag">Alta Gerencia</span>
+                        <span class="tag">Mercadotecnia</span>
+                        <span class="tag">Enfoque MYPEs</span>
+                        <span class="tag">Insights Estratégicos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section class="tools" id="herramientas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Stack Tecnológico</span>
+                <h2 class="section-title">Herramientas de Trabajo</h2>
+                <p class="section-description">Dominio profesional de las principales plataformas de análisis y visualización de datos</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">SQL</div>
+                    <h3>SQL</h3>
+                    <p>Consultas avanzadas, optimización de bases de datos, ETL y manipulación de grandes volúmenes de datos relacionales.</p>
+                    <div class="skill-level">
+                        <span class="skill-level-label">Nivel de Dominio</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">XL</div>
+                    <h3>Microsoft Excel</h3>
+                    <p>Análisis financiero, tablas dinámicas, macros VBA, modelado de datos y dashboards interactivos profesionales.</p>
+                    <div class="skill-level">
+                        <span class="skill-level-label">Nivel de Dominio</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">BI</div>
+                    <h3>Power BI</h3>
+                    <p>Visualización avanzada, DAX, modelado de datos, reportes ejecutivos y dashboards en tiempo real para toma de decisiones.</p>
+                    <div class="skill-level">
+                        <span class="skill-level-label">Nivel de Dominio</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Servicios</span>
+                <h2 class="section-title">Soluciones de Analítica para MYPEs</h2>
+                <p class="section-description">Servicios diseñados para impulsar el crecimiento de tu negocio mediante datos</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Análisis de Datos Estratégico</h3>
+                    <p>Transformo tus datos en información estratégica que guía decisiones de alta gerencia y optimiza recursos.</p>
+                    <ul class="service-features">
+                        <li>Análisis de rentabilidad por producto/servicio</li>
+                        <li>Identificación de oportunidades de crecimiento</li>
+                        <li>Métricas clave de desempeño (KPIs)</li>
+                        <li>Reportes ejecutivos personalizados</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Dashboards Interactivos</h3>
+                    <p>Diseño dashboards profesionales en Power BI y Excel que visualizan el estado de tu negocio en tiempo real.</p>
+                    <ul class="service-features">
+                        <li>Dashboards de ventas y marketing</li>
+                        <li>Control financiero y flujo de caja</li>
+                        <li>Indicadores de gestión operativa</li>
+                        <li>Visualizaciones interactivas personalizadas</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Consultoría en BI para MYPEs</h3>
+                    <p>Implemento soluciones de Business Intelligence adaptadas a las necesidades y presupuesto de pequeñas y medianas empresas.</p>
+                    <ul class="service-features">
+                        <li>Diagnóstico de necesidades de datos</li>
+                        <li>Diseño de arquitectura de datos</li>
+                        <li>Automatización de reportes</li>
+                        <li>Capacitación de equipos internos</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>Análisis de Mercadotecnia</h3>
+                    <p>Análisis profundo de comportamiento de clientes, campañas y efectividad de estrategias de marketing.</p>
+                    <ul class="service-features">
+                        <li>Segmentación de clientes y mercados</li>
+                        <li>Análisis de ROI de campañas</li>
+                        <li>Customer Lifetime Value (CLV)</li>
+                        <li>Forecasting de ventas y demanda</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Estudio -->
+    <section class="case-studies" id="casos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Casos de Éxito</h2>
+                <p class="section-description">Resultados tangibles en proyectos de analítica de datos</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-header">🛒</div>
+                    <div class="case-content">
+                        <span class="case-tag">E-Commerce</span>
+                        <h3>Optimización de Ventas Online</h3>
+                        <p>Implementé un sistema de BI completo para una tienda online, identificando productos de alta rotación y optimizando inventario mediante análisis predictivo.</p>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">+45%</span>
+                                <span class="result-label">Incremento en ventas</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">-30%</span>
+                                <span class="result-label">Reducción costos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-header">🏭</div>
+                    <div class="case-content">
+                        <span class="case-tag">Manufactura</span>
+                        <h3>Dashboard de Producción</h3>
+                        <p>Desarrollé un dashboard en Power BI para monitoreo en tiempo real de líneas de producción, reduciendo tiempos muertos y mejorando eficiencia operativa.</p>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">25%</span>
+                                <span class="result-label">Mayor eficiencia</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">$50K</span>
+                                <span class="result-label">Ahorro anual</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-header">📱</div>
+                    <div class="case-content">
+                        <span class="case-tag">Marketing</span>
+                        <h3>Análisis de Campañas Digitales</h3>
+                        <p>Analicé datos de múltiples canales digitales para una agencia de marketing, optimizando presupuestos y mejorando ROI de campañas publicitarias.</p>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">3.5x</span>
+                                <span class="result-label">Mejor ROI</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">-40%</span>
+                                <span class="result-label">Costo por lead</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-header">💼</div>
+                    <div class="case-content">
+                        <span class="case-tag">Servicios</span>
+                        <h3>Control Financiero Integral</h3>
+                        <p>Implementé sistema automatizado de reportería financiera en Excel y Power BI, brindando visibilidad completa sobre flujo de caja y rentabilidad.</p>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">90%</span>
+                                <span class="result-label">Tiempo ahorrado</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">100%</span>
+                                <span class="result-label">Precisión datos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>¿Listo para Transformar tus Datos?</h2>
+            <p>Agenda una consultoría gratuita y descubre cómo la analítica de datos puede impulsar tu MYPE</p>
+            <div class="cta-buttons" style="justify-content: center; margin-top: 2.5rem;">
+                <a href="mailto:diegosuarez.data@gmail.com" class="btn-primary" style="font-size:1.1rem; padding:18px 40px;">
+                    ✉️ Contactar Ahora
+                </a>
+            </div>
+            <div class="contact-methods">
+                <a href="mailto:diegosuarez.data@gmail.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <strong>gmail</strong>
+                    <span>diegosuarez.data@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/diego-suarez-cardenas-8449113a9/" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <strong>LinkedIn</strong>
+                    <span>/in/diegosuarez</span>
+                </a>
+                <a href="https://wa.me/3017555047" target="_blank" class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <strong>WhatsApp</strong>
+                    <span>Mensaje Directo</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Diego Súarez | Economista & Analista BI</p>
+        <p>Especialista en Business Intelligence para MYPEs</p>
+        <div class="footer-divider"></div>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/diegosuarez" target="_blank">in</a>
+            <a href="https://github.com/diegosuarez" target="_blank">gh</a>
+            <a href="mailto:diego.suarez@email.com">@</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación con efecto al scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de barras de habilidades
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.tools-grid').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
